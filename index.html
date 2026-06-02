@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jyothi Swaroopa Jinka — MS Research, Computer Vision & Document AI, IIIT Hyderabad">
+  <title>Jyothi Swaroopa Jinka</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --ink: #111111;
+      --muted: #555555;
+      --faint: #999999;
+      --link: #1a4a8a;
+      --rule: #dddddd;
+      --award: #8a6000;
+    }
+
+    body {
+      font-family: 'Palatino Linotype', 'Palatino', 'Book Antiqua', Palatino, serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.8;
+      padding: 0;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.8rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.01em;
+    }
+    nav a { color: var(--muted); text-decoration: none; }
+    nav a:hover, nav a.active { color: var(--ink); }
+
+    .wrap { max-width: 700px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+
+    .top {
+      display: grid;
+      grid-template-columns: 1fr 140px;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-family: 'Palatino Linotype', 'Palatino', 'Book Antiqua', Palatino, serif;
+      font-size: 2rem;
+      font-weight: normal;
+      margin-bottom: 0.25rem;
+      color: var(--ink);
+    }
+
+    .top-links {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      color: var(--faint);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+    }
+    .top-links a { color: var(--faint); }
+    .top-links a:hover { color: var(--link); text-decoration: none; }
+    .top-links span { margin: 0 0.25rem; }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      background: #ebebeb;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Palatino Linotype', Palatino, serif;
+      font-size: 2rem;
+      color: #aaaaaa;
+      flex-shrink: 0;
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bio p { margin-bottom: 0.95rem; color: var(--ink); font-size: 16px; }
+    .bio p:last-child { margin-bottom: 0; }
+
+    section { margin-top: 2.8rem; }
+
+    h2 {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* News */
+    .news-table { width: 100%; border-collapse: collapse; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13.5px; }
+    .news-table td { padding: 6px 0; vertical-align: top; }
+    .news-table td:first-child { color: var(--faint); white-space: nowrap; padding-right: 2rem; font-size: 12.5px; padding-top: 8px; min-width: 80px; }
+    .news-table td:last-child { color: var(--muted); line-height: 1.6; }
+    .news-table td strong { color: var(--ink); font-weight: 500; }
+    .news-table tr + tr td { border-top: 1px solid #f0f0f0; }
+
+    /* Publications & Experience */
+    .pub {
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 0 0.7rem;
+    }
+    .pub:first-child { border-top: 1px solid var(--rule); }
+
+    .pub-num {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+      padding-top: 2px;
+      text-align: right;
+    }
+    .exp-period {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      color: var(--faint);
+      padding-top: 4px;
+      line-height: 1.6;
+      text-align: right;
+    }
+
+    .pub-venue {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--faint);
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .award { font-weight: 500; color: var(--award); letter-spacing: 0.02em; }
+
+    .pub-title { font-size: 16px; color: var(--ink); margin-bottom: 3px; line-height: 1.45; }
+    .pub-title-sm { font-size: 15px; color: var(--ink); margin-bottom: 3px; line-height: 1.45; }
+
+    .pub-authors {
+      font-size: 13px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: var(--faint);
+      margin-bottom: 5px;
+    }
+    .pub-authors strong { color: var(--muted); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+
+    .pub-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 7px;
+      line-height: 1.6;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .pub-links { display: flex; gap: 1rem; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12.5px; }
+    .pub-links a { color: var(--link); }
+
+    footer {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: var(--faint);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    @media (max-width: 560px) {
+      .top { grid-template-columns: 1fr; }
+      .avatar { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav>
+    <ul>
+      <li><a href="#" class="active">about</a></li>
+      <li><a href="#publications">publications</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="top">
+    <div>
+      <h1>Jyothi Swaroopa Jinka</h1>
+      <div class="top-links">
+        <a href="mailto:jinka.jyothiswaroopa@gmail.com">Email</a><span>/</span>
+        <a href="https://scholar.google.com" target="_blank">Google Scholar</a><span>/</span>
+        <a href="https://github.com" target="_blank">GitHub</a><span>/</span>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a><span>/</span>
+        <a href="#">CV</a>
+      </div>
+    </div>
+    <!-- Replace the initials div below with: <img src="photo.jpg" alt="Jyothi Swaroopa Jinka"> inside .avatar -->
+    <div class="avatar">JSJ</div>
+  </div>
+
+  <!-- BIO -->
+  <div class="bio">
+    <p>I am an MS Research student at <a href="https://cvit.iiit.ac.in/" target="_blank">CVIT, IIIT Hyderabad</a>, where I work on computer vision and document AI. My research focuses on grounded document question answering, multilingual vision-language models, and scalable training for large document intelligence systems.</p>
+
+    <p>My work on multilingual textual attribute recognition (TexTAR) received the <strong>Best Student Paper Award at ICDAR 2025</strong>. I am also part of the <a href="#" target="_blank">BharatGen</a> initiative under India's National AI Mission, where I co-developed Patram-7B-Instruct — a multilingual vision-language model for document understanding across Indian languages.</p>
+
+    <p>Broadly, my research touches on three themes: evidence-grounded reasoning in documents, multilingual and multi-domain document understanding, and scalable training infrastructure for vision-language models.</p>
+
+    <p>I completed my undergraduate degree in Information Technology from <a href="https://www.cbit.ac.in/" target="_blank">CBIT, Hyderabad</a>.</p>
+  </div>
+
+  <!-- NEWS -->
+  <section id="news">
+    <h2>News</h2>
+    <table class="news-table">
+      <tr>
+        <td>2026</td>
+        <td><strong>M3Grounder</strong> accepted to CVPR 2026.</td>
+      </tr>
+      <tr>
+        <td>Jun 2025</td>
+        <td><strong>Best Student Paper Award</strong> at ICDAR 2025 for TexTAR.</td>
+      </tr>
+      <tr>
+        <td>Jan 2025</td>
+        <td>Joined BharatGen (National AI Mission) as a Generative AI Research Intern.</td>
+      </tr>
+      <tr>
+        <td>Jan 2024</td>
+        <td>Joined CVIT, IIIT Hyderabad as a Graduate Researcher.</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Selected publications</h2>
+
+    <div class="pub">
+      <div class="pub-num">1.</div>
+      <div>
+        <div class="pub-venue">CVPR 2026</div>
+        <div class="pub-title">M3Grounder: Mask-Based Multi-Span and Multi-Granular Grounding for Document QA</div>
+        <div class="pub-authors"><strong>Jyothi Swaroopa Jinka</strong>, et al.</div>
+        <div class="pub-desc">A mask-based grounding framework that localizes multi-span evidence at phrase, line, and block levels for document question answering.</div>
+        <div class="pub-links"><a href="#">Project page</a><a href="#">arXiv</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-num">2.</div>
+      <div>
+        <div class="pub-venue">ICDAR 2025 &nbsp;<span class="award">★ Best Student Paper</span></div>
+        <div class="pub-title">TexTAR: Textual Attribute Recognition in Multi-domain &amp; Multi-lingual Document Images</div>
+        <div class="pub-authors"><strong>Jyothi Swaroopa Jinka</strong>, et al.</div>
+        <div class="pub-desc">A context-aware transformer for word-level textual attribute recognition across multilingual and multi-domain documents, with the MMTAD benchmark dataset.</div>
+        <div class="pub-links"><a href="#">Project page</a><a href="#">Paper</a></div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-num">3.</div>
+      <div>
+        <div class="pub-venue">ECCV · Under review</div>
+        <div class="pub-title">DoCoG: Mask-based Multi-Type Grounded Chain-of-Thought for Document QA</div>
+        <div class="pub-authors"><strong>Jyothi Swaroopa Jinka</strong>, et al.</div>
+        <div class="pub-desc">Grounded document question answering with step-wise chain-of-thought reasoning over textual and graphical document elements.</div>
+        <div class="pub-links"><a href="#">Preprint</a></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="pub">
+      <div class="exp-period">Jan 2025–<br>present</div>
+      <div>
+        <div class="pub-venue">BharatGen · National AI Mission</div>
+        <div class="pub-title-sm">Generative AI Research Intern, IIIT Hyderabad</div>
+        <div class="pub-desc">Co-developed Patram-7B-Instruct, a multilingual VLM for document understanding across Indian languages. Built data pipelines producing 500K+ multimodal training samples and designed distributed training workflows with DeepSpeed ZeRO-3 on 64 H100 GPUs.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="exp-period">Jan 2024–<br>present</div>
+      <div>
+        <div class="pub-venue">CVIT, IIIT Hyderabad</div>
+        <div class="pub-title-sm">Graduate Researcher — Computer Vision &amp; Document AI</div>
+        <div class="pub-desc">Working on grounded document QA, textual attribute recognition, and multimodal document understanding. Published 3 papers at top computer vision venues.</div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="exp-period">Jun–Aug<br>2022</div>
+      <div>
+        <div class="pub-venue">MathWorks, Hyderabad</div>
+        <div class="pub-title-sm">Engineering Development Group Intern</div>
+        <div class="pub-desc">Built m2doc, an automated MATLAB documentation tool. Refactored legacy JavaScript workflows to async/await patterns.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="bio">
+      <p>Please reach me at <a href="mailto:jinka.jyothiswaroopa@gmail.com">jinka.jyothiswaroopa@gmail.com</a>. I am happy to discuss collaborations on document AI, multimodal learning, or related areas.</p>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Jyothi Swaroopa Jinka &nbsp;&middot;&nbsp; IIIT Hyderabad</footer>
+
+</div>
+</body>
+</html>
