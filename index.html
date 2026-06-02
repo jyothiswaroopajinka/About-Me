@@ -48,14 +48,6 @@
 
     .wrap { max-width: 700px; margin: 0 auto; padding: 0 1.5rem 5rem; }
 
-    .top {
-      display: grid;
-      grid-template-columns: 1fr 140px;
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: 2rem;
-    }
-
     h1 {
       font-family: 'Palatino Linotype', 'Palatino', 'Book Antiqua', Palatino, serif;
       font-size: 2rem;
@@ -75,29 +67,7 @@
     .top-links a:hover { color: var(--link); text-decoration: none; }
     .top-links span { margin: 0 0.25rem; }
 
-    .avatar {
-      width: 140px;
-      height: 140px;
-      background: #ebebeb;
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Palatino Linotype', Palatino, serif;
-      font-size: 2rem;
-      color: #aaaaaa;
-      flex-shrink: 0;
-      border: 1px solid #e0e0e0;
-      overflow: hidden;
-    }
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .bio p { margin-bottom: 0.95rem; color: var(--ink); font-size: 16px; }
+.bio p { margin-bottom: 0.95rem; color: var(--ink); font-size: 16px; }
     .bio p:last-child { margin-bottom: 0; }
 
     section { margin-top: 2.8rem; }
@@ -193,10 +163,6 @@
       border-top: 1px solid var(--rule);
     }
 
-    @media (max-width: 560px) {
-      .top { grid-template-columns: 1fr; }
-      .avatar { display: none; }
-    }
   </style>
 </head>
 <body>
@@ -213,8 +179,7 @@
   </nav>
 
   <!-- HEADER -->
-  <div class="top">
-    <div>
+  <div>
       <h1>Jyothi Swaroopa Jinka</h1>
       <div class="top-links">
         <a href="mailto:jinka.jyothiswaroopa@gmail.com">Email</a><span>/</span>
@@ -223,9 +188,6 @@
         <a href="https://linkedin.com" target="_blank">LinkedIn</a><span>/</span>
         <a href="#">CV</a>
       </div>
-    </div>
-    <!-- Replace the initials div below with: <img src="photo.jpg" alt="Jyothi Swaroopa Jinka"> inside .avatar -->
-    <div class="avatar">JSJ</div>
   </div>
 
   <!-- BIO -->
@@ -271,7 +233,7 @@
       <div>
         <div class="pub-venue">CVPR 2026</div>
         <div class="pub-title">M3Grounder: Mask-Based Multi-Span and Multi-Granular Grounding for Document QA</div>
-        <div class="pub-authors"><strong>Jyothi Swaroopa Jinka</strong>, et al.</div>
+
         <div class="pub-desc">A mask-based grounding framework that localizes multi-span evidence at phrase, line, and block levels for document question answering.</div>
         <div class="pub-links"><a href="#">Project page</a><a href="#">arXiv</a></div>
       </div>
@@ -282,22 +244,13 @@
       <div>
         <div class="pub-venue">ICDAR 2025 &nbsp;<span class="award">★ Best Student Paper</span></div>
         <div class="pub-title">TexTAR: Textual Attribute Recognition in Multi-domain &amp; Multi-lingual Document Images</div>
-        <div class="pub-authors"><strong>Jyothi Swaroopa Jinka</strong>, et al.</div>
+       
         <div class="pub-desc">A context-aware transformer for word-level textual attribute recognition across multilingual and multi-domain documents, with the MMTAD benchmark dataset.</div>
         <div class="pub-links"><a href="#">Project page</a><a href="#">Paper</a></div>
       </div>
     </div>
 
-    <div class="pub">
-      <div class="pub-num">3.</div>
-      <div>
-        <div class="pub-venue">ECCV · Under review</div>
-        <div class="pub-title">DoCoG: Mask-based Multi-Type Grounded Chain-of-Thought for Document QA</div>
-        <div class="pub-authors"><strong>Jyothi Swaroopa Jinka</strong>, et al.</div>
-        <div class="pub-desc">Grounded document question answering with step-wise chain-of-thought reasoning over textual and graphical document elements.</div>
-        <div class="pub-links"><a href="#">Preprint</a></div>
-      </div>
-    </div>
+   
 
   </section>
 
